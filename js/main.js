@@ -15,7 +15,7 @@ function setup() {
 }
 
 function draw() {
-  var hr = (21 * 24 + 12) - day() * 24 - hour();
+  var hr = 0;
   var min = 60 - minute() < 10 ? "0" + (60 - minute()) : 60 - minute();
   var sec = 60 - second() < 10 ? "0" + (60 - second()) : 60 - second();
   time.html(
@@ -25,7 +25,7 @@ function draw() {
   );
   background(random(255), random(255), random(255), 6);
 
-  if (hr <= 0 && min <= 0 && sec <= 0) {
+  if (hr <= 0 && min <= 0 && sec <= 60) {
     countdown = true;
     time.html("PANIC!!!!");
     time.style("color", "#f00");
