@@ -2,6 +2,7 @@ var img;
 var countdown = false;
 var time;
 var frame = 0;
+var endTime = new Date(2016, 0, 21, 15, 0, 0).getTime();
 
 function setup() {
   var container = select('.vis-container');
@@ -24,7 +25,7 @@ function draw() {
   );
   background(random(255), random(255), random(255), 6);
 
-  if (hr <= 0 && min <= 0 && sec <= 0) {
+  if (Date.now() >= endTime) {
     countdown = true;
     time.html("PANIC!!!!");
     time.style("color", "#f00");
